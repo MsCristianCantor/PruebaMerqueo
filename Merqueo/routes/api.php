@@ -18,6 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('products', 'ProductsController@getAll')->name('getAllProducts');
+Route::get('productsAvailable', 'ProductsController@getAvailable')->name('getProductsAvailable');
+Route::get('productsLessSold/{date}/{quantity}', 'ProductsController@getLessSold')->name('getProductsLessSold');
+Route::post('inventory', 'InventoryController@add')->name('addInventory');
+Route::post('providers', 'ProvidersController@add')->name('addProviders');
+Route::post('orders', 'OrdersController@add')->name('addOrders');
 
 /*Route::get('tasks', 'TasksController@getAll')->name('getAllTasks');
 Route::post('tasks', 'TasksController@add')->name('addTasks');

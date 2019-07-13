@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('address');
             $table->string('user');
             $table->string('state');
-            $table->date('deliverDate');
+            $table->date('deliveryDate');
             $table->timestamps();
         });
     }
