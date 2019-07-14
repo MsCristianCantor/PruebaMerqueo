@@ -36,7 +36,7 @@ class ProductsController extends Controller
         ->limit($quantity)
         ->get();
 
-        if(!empty($products)){
+        if(empty($products)){
             $products[] = 'No se encontraron registros';
         }
 
