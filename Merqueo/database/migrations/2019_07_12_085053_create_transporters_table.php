@@ -15,8 +15,6 @@ class CreateTransportersTable extends Migration
     {
         Schema::create('transporters', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('order_id')->nullable();
-            $table->foreign('order_id')->references('id')->on('orders');
             $table->string('name');
             $table->timestamps();
         });

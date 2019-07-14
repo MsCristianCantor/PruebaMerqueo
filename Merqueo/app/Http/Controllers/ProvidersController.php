@@ -14,6 +14,9 @@ class ProvidersController extends Controller
         //dd($request);
         //$inv = Inventory::create($request->all());
         /*$request2 = array();*/
+
+        $con = 0;
+
         foreach($request['providers'] as $provider){
 
             $datetime = date("Y-m-d H:i:s");
@@ -31,7 +34,18 @@ class ProvidersController extends Controller
                     );
                 }
             }
+            $con ++;
         }
-        return $request;
+
+        if($con > 2)
+        {
+            $res[] = 'Se crearon los registros de forma correcta.';
+        }
+        else
+        {
+            $res[] = 'Se creo el registro de forma correcta.';
+        }
+
+        return $res;
     }
 }
